@@ -1,0 +1,36 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: redis,feign # 多配置文件 ssl
+  application:
+    name: consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8847
+      config:
+        server-addr: localhost:8847
+        file-extension: yaml
+    sentinel:
+      transport:
+        dashboard: localhost:8080
+        port: 8719
+      log:
+        dir: /root/${spring.application.name}/sentinel/log # 日志记录位置
+      flow:
+        coldFactor: 3 # 冷启动因子
+  sleuth:
+    sampler:
+      probability: 1 # 采样率0-1
+  zipkin:
+    base-url: http://localhost:9411
+logging:
+  level:
+    com.example.base.service.feign.ProviderService: debug # 打印OpenFeign日志
+    org.springframework.web.servlet.DispatcherServlet: debug # sleuth链路追踪日志记录
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

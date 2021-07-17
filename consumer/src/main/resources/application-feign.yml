@@ -1,0 +1,13 @@
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+  sentinel:
+    enabled: true
+#  NONE 默认，不显示任何日志
+#  BASIC 请求方法，URL，响应状态和执行时间
+#  HEADERS 请求和响应头信息 + BASIC
+#  FULL 请求和响应的正文以及元数据 + HEADERS
