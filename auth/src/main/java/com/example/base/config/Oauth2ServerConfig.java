@@ -17,10 +17,7 @@ import org.springframework.security.oauth2.provider.token.*;
 
 
 /**
- * @author benben
- * @program cloud2021
- * @Description
- * @date 2021-05-11 15:52
+ * Oauth2 授权服务器
  */
 @Configuration
 @EnableAuthorizationServer

@@ -22,10 +22,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * @author benben
- * @program cloud2021
- * @Description
- * @date 2021-05-10 16:39
+ * 自定义认证逻辑
  */
 @Component
 public class UserDetailsServiceImpl implements UserDetailsService {
